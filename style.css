@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(113, 116, 115);
+    background-image: url('weather.jpg');
+    background-size: cover;
+}
+.Card {
+    background-color: rgb(180, 174, 185);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+    opacity: .6;
+    border-radius: 12px;
+}
+.Search {
+    font-size: large;
+    font-weight: bolder;
+}
+.Tempature {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.Date {
+    font-size: 30px;
+    margin: 0;
+}
+.Humidity{
+    font-size: 30px;
+    margin: 0;
+}
+.Wind{
+    font-size: 30px;
+    margin: 0;
+}

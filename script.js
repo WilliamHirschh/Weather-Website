@@ -1,1 +1,1 @@
-console.log("Hello")
+var WeatherApiKey = 'c9676e6950f05e39b2aae36c413d9dff'
