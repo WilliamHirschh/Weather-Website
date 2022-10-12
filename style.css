@@ -25,9 +25,9 @@ body {
     font-size: 50px;
     margin-bottom: 20px;
 }
-.Date {
+.todaysdate {
     font-size: 30px;
-    margin: 0;
+    margin-bottom: 20px;
 }
 .Humidity{
     font-size: 30px;
