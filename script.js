@@ -1,19 +1,4 @@
-var Key = "c9676e6950f05e39b2aae36c413d9dff";
-const SearchBar = document.getElementById("SearchBar");
-SearchBar.addEventListener("click", () => {
-        console.log("e.target.value")
-})
-
-
-
-
-
-
-
-
-
-
-
+let Key = "c9676e6950f05e39b2aae36c413d9dff"
 
 var datetime = null,
         date = null;
@@ -58,10 +43,10 @@ var WeatherData = {
 };
 function GetWeather(lat, lon) {
     fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + this.Key
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + Key
      )
      .then((response) => response.json())
-     .then((data) => this.displayresults(data));
+     .then((data) => displayresults(data));
 }
 
 function displayresults(data) {
@@ -76,11 +61,12 @@ function displayresults(data) {
          document.querySelector(".Wind").innerText = "wind: " + wind;
          document.querySelector(".Humidity").innerText = "Humidity: " + humidity;
 
+   
          
      };
      
 //      function searchresults () {
-//         GetWeather(document.querySelector(".SearchBar").value);
+//         document.querySelector(".SearchBar").value
 //      }
 // document.querySelector(".SearchBtn").addEventListener("click", function () {
 // searchresults();
