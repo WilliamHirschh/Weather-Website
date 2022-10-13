@@ -1,4 +1,11 @@
 let Key = "c9676e6950f05e39b2aae36c413d9dff"
+let SearchForm = document.getElementById("Search");
+let SearchBar = document.getElementById("SearchBar");
+SearchForm.addEventListener("submit", function(event) {
+    event.preventDefault()
+    console.log(SearchBar.value)
+    convertToCords.GetCords(SearchBar.value)
+});
 
 var datetime = null,
         date = null;
