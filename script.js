@@ -21,14 +21,14 @@ var convertToCords = {
             "https://api.openweathermap.org/geo/1.0/direct?q=" + cityname + "&limit=1&appid=c9676e6950f05e39b2aae36c413d9dff"
         )
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) => WeatherData.GetWeather(data[0].lat, data[0].lon));
             
     },
     showresults: function(data){
        
     }
 }
-console.log(Lat)
+
 
 
 
@@ -39,15 +39,19 @@ console.log(Lat)
 var WeatherData = {
     Key: "c9676e6950f05e39b2aae36c413d9dff",
 
-    GetWeather: function (LatLon) {
+    GetWeather: function (Lat, Lon) {
         fetch(
             "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon=" + Lon + "&appid=" + this.Key
          )
          .then((response) => response.json())
-         .then((data) => console.log(data));
+         .then((data) => this.displayresults(data));
     },
-    display: function(data){
-
+    displayresults: function(data) {
+       const { name } = data.city.name;
+        const { temp } = data.list[0].main.temp;
+       const { wind } = data.list[0].wind.speed;
+        const { humidity } = data.list[0].main.humidity;
+        console.log(name)
     }
 };
 
