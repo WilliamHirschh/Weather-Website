@@ -1,4 +1,19 @@
 var Key = "c9676e6950f05e39b2aae36c413d9dff";
+const SearchBar = document.getElementById("SearchBar");
+SearchBar.addEventListener("click", () => {
+        console.log("e.target.value")
+})
+
+
+
+
+
+
+
+
+
+
+
 
 var datetime = null,
         date = null;
@@ -18,6 +33,7 @@ $(document).ready(function(){
 
 var convertToCords = {
     Key: "c9676e6950f05e39b2aae36c413d9dff",
+    
 
     GetCords: function (cityname) {
         fetch(
@@ -34,20 +50,15 @@ var convertToCords = {
 
 
 
-
-
-
-
-
 var WeatherData = {
     Key: "c9676e6950f05e39b2aae36c413d9dff",
 
    
   
 };
-function GetWeather(Lat, Lon) {
+function GetWeather(lat, lon) {
     fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon=" + Lon + "&units=metric&appid=" + this.Key
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + this.Key
      )
      .then((response) => response.json())
      .then((data) => this.displayresults(data));
@@ -55,10 +66,10 @@ function GetWeather(Lat, Lon) {
 
 function displayresults(data) {
     console.log(data)
-        const name  = data.city.name;
-         const temp  = data.list[0].main.temp;
-        const wind  = data.list[0].wind.speed;
-         const humidity  = data.list[0].main.humidity;
+        const name = data.city.name;
+         const temp = data.list[0].main.temp;
+        const wind = data.list[0].wind.speed;
+         const humidity = data.list[0].main.humidity;
          console.log(name,temp,wind,humidity)
          document.querySelector(".displayedCity").innerText = "Displaying Weather in " + name;
          document.querySelector(".Tempature").innerText = "Tempature: " + temp + "°C";
@@ -68,10 +79,10 @@ function displayresults(data) {
          
      };
      
-     function searchresults () {
-        GetWeather = (document.querySelector(".SearchBar").value);
-     }
-document.querySelector(".SearchBtn").addEventListener("click", function () {
-searchresults();
-})
+//      function searchresults () {
+//         GetWeather(document.querySelector(".SearchBar").value);
+//      }
+// document.querySelector(".SearchBtn").addEventListener("click", function () {
+// searchresults();
+// })
 
