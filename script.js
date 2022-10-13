@@ -21,10 +21,7 @@ var convertToCords = {
             "https://api.openweathermap.org/geo/1.0/direct?q=" + cityname + "&limit=1&appid=c9676e6950f05e39b2aae36c413d9dff"
         )
             .then((response) => response.json())
-            .then((data => {
-                console.log(data)
-                
-            }
+            .then((data) => console.log(data));
             
     },
     showresults: function(data){
